@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ja\\source\\repos\\SSI\\ConsoleApp3\\ConsoleApp3.csproj",
-      "projectName": "ConsoleApp3",
-      "projectPath": "C:\\Users\\ja\\source\\repos\\SSI\\ConsoleApp3\\ConsoleApp3.csproj",
+      "projectUniqueName": "C:\\Users\\ja\\source\\repos\\SSI\\ConsoleApp3\\Zdanie1.csproj",
+      "projectName": "Zdanie1",
+      "projectPath": "C:\\Users\\ja\\source\\repos\\SSI\\ConsoleApp3\\Zdanie1.csproj",
       "packagesPath": "C:\\Users\\ja\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\ja\\source\\repos\\SSI\\ConsoleApp3\\obj\\",
       "projectStyle": "PackageReference",

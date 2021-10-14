@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NLNi6dqKVtqurhaD5BCVWrwoiyOrCPjdI4W2/7pDEXIBpwwwXnxpbff4PjELjY85pTAkgCjWSk2KA18CesFr2A==",
+  "dgSpecHash": "DILdsCUBYY0BTLwl+ikqbISgyOdfcmt+2Gtzgw2iSyk6J3DbkteWVx4PL+00rowOOx95W2tIqEvKY4TTcpmxuw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ja\\source\\repos\\SSI\\ConsoleApp3\\ConsoleApp3.csproj",
+  "projectFilePath": "C:\\Users\\ja\\source\\repos\\SSI\\ConsoleApp3\\Zdanie1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ja\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.13\\microsoft.netcore.app.host.win-x64.3.1.13.nupkg.sha512"
   ],
