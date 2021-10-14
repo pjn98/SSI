@@ -30,12 +30,12 @@ namespace ConsoleApp3
             };
         }
 
-        private List<List<string>> ReadFile(string path, char separator)
+        private static List<List<string>> ReadFile(string path, char separator)
         {
             return File.ReadAllLines(path).Select(x => x.Split(separator).ToList()).ToList();
         }
 
-        private void Replace(string path)
+        private static void Replace(string path)
         {
             var file = File.ReadAllText(path);
             file = file.Replace(".", ",");
