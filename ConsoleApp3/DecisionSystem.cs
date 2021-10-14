@@ -12,8 +12,8 @@ namespace ConsoleApp3
         {
             Replace(pathSamples);
             Replace(pathValues);
-            var samples = File.ReadAllLines(pathSamples).Select(x => x.Split(separator).ToList()).ToList();
-            var attrs = File.ReadAllLines(pathValues).Select(x => x.Split(separator).ToList()).ToList();
+            var samples = ReadFile(pathSamples, separator);
+            var attrs = ReadFile(pathValues, separator);
             var names = new List<string>();
             var ifAttrSym = new List<bool>();
             foreach (var attr in attrs)
@@ -28,6 +28,11 @@ namespace ConsoleApp3
                 AttrNames = names,
                 IfAttrSym = ifAttrSym
             };
+        }
+
+        private List<List<string>> ReadFile(string path, char separator)
+        {
+            return File.ReadAllLines(path).Select(x => x.Split(separator).ToList()).ToList();
         }
 
         private void Replace(string path)
