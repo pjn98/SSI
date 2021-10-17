@@ -1,5 +1,0 @@
-sepal_length r
-sepal_width r
-petal_length r
-petal_width r
-class s
