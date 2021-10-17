@@ -1,0 +1,10 @@
+C:\Users\ja\source\repos\SSI\Zadanie2.3\bin\Debug\Zadanie2.3.exe.config
+C:\Users\ja\source\repos\SSI\Zadanie2.3\bin\Debug\Zadanie2.3.exe
+C:\Users\ja\source\repos\SSI\Zadanie2.3\bin\Debug\Zadanie2.3.pdb
+C:\Users\ja\source\repos\SSI\Zadanie2.3\obj\Debug\Zadanie2.3.csprojAssemblyReference.cache
+C:\Users\ja\source\repos\SSI\Zadanie2.3\obj\Debug\Zadanie2._3.Form1.resources
+C:\Users\ja\source\repos\SSI\Zadanie2.3\obj\Debug\Zadanie2._3.Properties.Resources.resources
+C:\Users\ja\source\repos\SSI\Zadanie2.3\obj\Debug\Zadanie2.3.csproj.GenerateResource.cache
+C:\Users\ja\source\repos\SSI\Zadanie2.3\obj\Debug\Zadanie2.3.csproj.CoreCompileInputs.cache
+C:\Users\ja\source\repos\SSI\Zadanie2.3\obj\Debug\Zadanie2.3.exe
+C:\Users\ja\source\repos\SSI\Zadanie2.3\obj\Debug\Zadanie2.3.pdb
