@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ConsoleTables;
 
 namespace ConsoleApp3
 {
@@ -11,24 +12,24 @@ namespace ConsoleApp3
             var samples = @"C:\Users\ja\source\repos\SSI\ConsoleApp3\wartosci.txt";
             var values = @"C:\Users\ja\source\repos\SSI\ConsoleApp3\atrybuty.txt";
             var decisionSystem = new DecisionSystem();
-            var sampleBase = decisionSystem.ReadSampleBase(samples, values, separator);
-            foreach (var name in sampleBase.AttrNames)
+            var sampleBase = new SampleBaseDto
             {
-                Console.Write(name + " ");
-            }
+                Samples = decisionSystem.ReadSamples(samples, separator),
+                AttrNames = decisionSystem.ReadAttributeNames(values, separator),
+                IfAttrSym = decisionSystem.CheckIfAttrSym(values, separator)
+            };
+
+            var table = new ConsoleTable(sampleBase.AttrNames.ToArray());
 
             foreach (var sample in sampleBase.Samples)
             {
-                Console.WriteLine();
-                foreach (var record in sample)
-                {
-                    Console.Write(record + " ");
-                }
+                table.AddRow(sample.ToArray());
             }
-            Console.WriteLine();
-            Console.WriteLine(sampleBase.Samples[0][1]);
-            Console.WriteLine(sampleBase.IfAttrSym[0]);
-            Console.WriteLine(sampleBase.AttrNames[0]);
+
+            table.Write();
+            Console.WriteLine("Samples[0][2] = " + sampleBase.Samples[0][2]);
+            Console.WriteLine("IfAttrSym[1] = " + sampleBase.IfAttrSym[1]);
+            Console.WriteLine("AttrNames[1] = " + sampleBase.AttrNames[1]);
             Console.ReadKey();
         }
     }
