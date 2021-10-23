@@ -47,6 +47,12 @@ namespace Zadanie2._4
         public Dictionary<string, List<List<double>>> GroupSamples(string path, char separator)
         {
             var samples = ReadSamples(path, separator);
+            foreach (var sample in samples)
+            {
+                var sampleClass = sample.Last();
+                sample[sample.Count - 1] =
+                    sampleClass == "1" ? "Setosa" : sampleClass == "2" ? "Versicolour" : sampleClass == "3" ? "Virginica" : sampleClass;
+            }
             var samplesDictionary = new Dictionary<string, List<List<double>>>();
             foreach (var sample in samples)
             {

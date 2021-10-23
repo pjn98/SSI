@@ -9,31 +9,24 @@ namespace Zadanie2._4
 {
     public class ChartHelper
     {
-        public void GenerateChart(Chart chart, Dictionary<string, List<List<double>>> sampleBase, int column1, int column2)
+        public void GenerateChart(Chart chart, SampleBaseDto sampleBase, int column1, int column2)
         {
             chart.Series.Clear();
-            var series1 = chart.Series.Add("klasa 1");
-            var series2 = chart.Series.Add("klasa 2");
-            var series3 = chart.Series.Add("klasa 3");
-
-            var series1XPoints = GetPoints(sampleBase, "1", column1, column2).XPoints;
-            var series1YPoints = GetPoints(sampleBase, "1", column1, column2).YPoints;
-
-            var series2XPoints = GetPoints(sampleBase, "2", column1, column2).XPoints;
-            var series2YPoints = GetPoints(sampleBase, "2", column1, column2).YPoints;
-
-            var series3XPoints = GetPoints(sampleBase, "3", column1, column2).XPoints;
-            var series3YPoints = GetPoints(sampleBase, "3", column1, column2).YPoints;
-
-            Draw(series1, series1XPoints, series1YPoints, SeriesChartType.Point);
-            Draw(series2, series2XPoints, series2YPoints, SeriesChartType.Point);
-            Draw(series3, series3XPoints, series3YPoints, SeriesChartType.Point);
+            foreach (var key in sampleBase.GroupedSamples.Keys)
+            {
+                var series = chart.Series.Add(key);
+                var seriesXPoints = GetPoints(sampleBase.GroupedSamples, key, column1, column2).XPoints;
+                var seriesYPoints = GetPoints(sampleBase.GroupedSamples, key, column1, column2).YPoints;
+                Draw(series, seriesXPoints, seriesYPoints, SeriesChartType.Point, chart, sampleBase.AttrNames[column1], sampleBase.AttrNames[column2]);
+            }
         }
 
-        private static void Draw(Series series, List<double> xValues, List<double> yValues, SeriesChartType chartType)
+        private static void Draw(Series series, List<double> xValues, List<double> yValues, SeriesChartType chartType, Chart chart, string axisX, string axisY)
         {
             series.ChartType = chartType;
             series.MarkerSize = 5;
+            chart.ChartAreas[0].AxisX.Title = axisX;
+            chart.ChartAreas[0].AxisY.Title = axisY;
             for (var i = 0; i < xValues.Count; i++)
                 series.Points.AddXY(xValues[i], yValues[i]);
         }

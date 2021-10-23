@@ -31,16 +31,15 @@ namespace Zadanie2._4
             var decisionSystem = new DecisionSystem();
             var sampleBase = new SampleBaseDto
             {
-                Samples = decisionSystem.ReadSamples(samples, separator),
                 AttrNames = decisionSystem.ReadAttributeNames(values, separator),
                 IfAttrSym = decisionSystem.CheckIfAttrSym(values, separator),
                 GroupedSamples = decisionSystem.GroupSamples(samples, separator)
             };
             var charts = new ChartHelper();
-            charts.GenerateChart(chart1, sampleBase.GroupedSamples, 2, 3);
-            charts.GenerateChart(chart2, sampleBase.GroupedSamples, 1, 3);
-            charts.GenerateChart(chart3, sampleBase.GroupedSamples, 0, 3);
-            charts.GenerateChart(chart4, sampleBase.GroupedSamples, 1, 2);
+            charts.GenerateChart(chart1, sampleBase, 2, 3);
+            charts.GenerateChart(chart2, sampleBase, 1, 3);
+            charts.GenerateChart(chart3, sampleBase, 0, 3);
+            charts.GenerateChart(chart4, sampleBase, 1, 2);
         }
 
     }
