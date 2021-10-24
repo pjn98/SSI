@@ -1,0 +1,10 @@
+C:\Users\ja\source\repos\SSI\Zadanie4\bin\Debug\Zadanie4.exe.config
+C:\Users\ja\source\repos\SSI\Zadanie4\bin\Debug\Zadanie4.exe
+C:\Users\ja\source\repos\SSI\Zadanie4\bin\Debug\Zadanie4.pdb
+C:\Users\ja\source\repos\SSI\Zadanie4\obj\Debug\Zadanie4.csprojAssemblyReference.cache
+C:\Users\ja\source\repos\SSI\Zadanie4\obj\Debug\Zadanie4.Form1.resources
+C:\Users\ja\source\repos\SSI\Zadanie4\obj\Debug\Zadanie4.Properties.Resources.resources
+C:\Users\ja\source\repos\SSI\Zadanie4\obj\Debug\Zadanie4.csproj.GenerateResource.cache
+C:\Users\ja\source\repos\SSI\Zadanie4\obj\Debug\Zadanie4.csproj.CoreCompileInputs.cache
+C:\Users\ja\source\repos\SSI\Zadanie4\obj\Debug\Zadanie4.exe
+C:\Users\ja\source\repos\SSI\Zadanie4\obj\Debug\Zadanie4.pdb
