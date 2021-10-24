@@ -51,8 +51,6 @@ namespace Zadanie4
                 var newX = x + random.NextDouble() * (spread - (-spread)) + (-spread);
                 newX = newX > end ? end : newX < start ? start : newX;
                 var newY = Math.Sin(newX / 10) * Math.Sin(newX / 200);
-                seriesXPoints.Add(newX);
-                seriesYPoints.Add(newY);
                 if (newY >= y)
                 {
                     x = newX;
@@ -63,6 +61,8 @@ namespace Zadanie4
                 {
                     spread /= incrementalFactor;
                 }
+                seriesXPoints.Add(x);
+                seriesYPoints.Add(y);
             }
             return new PointsDto
             {
