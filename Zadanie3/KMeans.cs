@@ -8,6 +8,38 @@ namespace Zadanie3
 {
     public class KMeans
     {
+        public Dictionary<int, List<List<double>>> KMeansAlgorithm(int m, int iters, List<List<double>> samples, Metrics.Metric metric)
+        {
+            var vDictionary = SelectMeasures(m, samples);
+            vDictionary = CalculateDistanceAndGroup(samples, vDictionary, metric);
+            var charts = new ChartHelper();
+
+            for (var i = 0; i < iters; i++)
+            {
+                var vDictionaryTmp = new Dictionary<int, List<List<double>>>();
+                foreach (var item in vDictionary)
+                {
+                    var a = item;
+                    double avgX = 0;
+                    double avgY = 0;
+                    foreach (var value in item.Value)
+                    {
+                        avgX += value[0];
+                        avgY += value[1];
+                    }
+
+                    vDictionaryTmp.Add(item.Key,
+                        new List<List<double>> { new List<double> { avgX / item.Value.Count, avgY / item.Value.Count } });
+                }
+
+                vDictionary.Clear();
+                vDictionary = vDictionaryTmp;
+                vDictionary = CalculateDistanceAndGroup(samples, vDictionary, metric);
+            }
+
+            return vDictionary;
+        }
+
         public Dictionary<int, List<List<double>>> SelectMeasures(int m, List<List<double>> samples)
         {
             var random = new Random();
