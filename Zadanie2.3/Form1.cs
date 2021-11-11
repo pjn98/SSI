@@ -47,6 +47,7 @@ namespace Zadanie2._3
         private void Draw(Series series, List<double> xValues, List<double> yValues, SeriesChartType chartType)
         {
             series.ChartType = chartType;
+            series.MarkerSize = 10;
             for (var i = 0; i < xValues.Count; i++)
                 series.Points.AddXY(xValues[i], yValues[i]);
         }
