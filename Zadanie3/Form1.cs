@@ -8,7 +8,7 @@ namespace Zadanie3
 {
     public partial class Form1 : Form
     {
-        static Metrics.Metric _m = Metrics.EuclideanMetric;
+        private readonly Metrics.Metric _metric = Metrics.EuclideanMetric;
         public Form1()
         {
             InitializeComponent();
@@ -31,9 +31,9 @@ namespace Zadanie3
             kMeans.SelectMeasures(m, sampleBase.Samples);
             var vDictionary = kMeans.SelectMeasures(m, sampleBase.Samples);
 
-            vDictionary = kMeans.CalculateDistanceAndGroup(sampleBase.Samples, vDictionary, _m);
+            vDictionary = kMeans.CalculateDistanceAndGroup(sampleBase.Samples, vDictionary, _metric);
 
-            // DO DOKOŃCZENIA
+            // DO DOKOŃCZENIA, zrobić pętlę, usunąć nadmiarowe m elementów z każdej grupy w słowniku
 
             var charts = new ChartHelper();
             charts.GenerateChart(chart1, vDictionary, 0, 1);
