@@ -28,9 +28,7 @@ namespace Zadanie3
             };
             var m = 4;
             var kMeans = new KMeans();
-            kMeans.SelectMeasures(m, sampleBase.Samples);
             var vDictionary = kMeans.SelectMeasures(m, sampleBase.Samples);
-
             vDictionary = kMeans.CalculateDistanceAndGroup(sampleBase.Samples, vDictionary, _metric);
 
             // DO DOKOŃCZENIA, zrobić pętlę, usunąć nadmiarowe m elementów z każdej grupy w słowniku

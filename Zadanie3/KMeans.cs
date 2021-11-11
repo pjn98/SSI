@@ -14,7 +14,7 @@ namespace Zadanie3
             var vDictionary = new Dictionary<int, List<List<double>>>();
             while (vDictionary.Keys.Count != m)
             {
-                var number = random.Next(0, samples.Count() + 1);
+                var number = random.Next(0, samples.Count());
                 if (!vDictionary.ContainsKey(number))
                     vDictionary.Add(number, new List<List<double>>() { samples[number] });
             }
@@ -24,10 +24,16 @@ namespace Zadanie3
 
         public Dictionary<int, List<List<double>>> CalculateDistanceAndGroup(List<List<double>> samples, Dictionary<int, List<List<double>>> vDictionary, Metrics.Metric metric)
         {
+            var index = 0;
             foreach (var sample in samples)
             {
                 var samplesList = new List<CalculatedSampleDto>();
 
+                if (vDictionary.Keys.Contains(index))
+                {
+                    index++;
+                    continue;
+                }
                 foreach (var key in vDictionary.Keys)
                 {
                     var distance = metric(sample, vDictionary[key].First(), 2);
@@ -41,6 +47,7 @@ namespace Zadanie3
 
                 samplesList = samplesList.OrderBy(x => x.Distance).ToList();
                 vDictionary[samplesList.First().DictionaryKey].Add(samplesList.First().ValueList);
+                index++;
             }
 
             return vDictionary;
