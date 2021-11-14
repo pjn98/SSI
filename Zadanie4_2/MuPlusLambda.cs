@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Windows.Forms.VisualStyles;
 
 namespace Zadanie4_2
 {
@@ -30,23 +28,10 @@ namespace Zadanie4_2
             };
         }
 
-        private List<IndividualDto> CreateMuPlusLambdaPool(List<IndividualDto> muPool, List<IndividualDto> lambdaPool)
-        {
-            var muPlusLambdaPool = new List<IndividualDto>();
-            foreach (var individual in muPool)
-                muPlusLambdaPool.Add(individual);
-
-            foreach (var individual in lambdaPool)
-                muPlusLambdaPool.Add(individual);
-
-            return muPlusLambdaPool;
-        }
-
         private List<IndividualDto> GetNewMuPool(List<IndividualDto> muPool, List<IndividualDto> lambdaPool, int mu)
         {
-            var newMuPool = CreateMuPlusLambdaPool(muPool, lambdaPool)
-                .OrderByDescending(x => x.AdaptationFunctionValue).Take(mu);
-            return newMuPool.ToList();
+            var newMuPool = muPool.Concat(lambdaPool).OrderByDescending(x=>x.AdaptationFunctionValue).Take(mu).ToList();
+            return newMuPool;
         }
 
         private List<IndividualDto> CreateMuPool(int mu, int parameterNumbers)
@@ -72,7 +57,10 @@ namespace Zadanie4_2
         {
             var tournamentParticipants = GetTournamentParticipants(parentPool, tournamentSize);
             var tournamentWinner = GetTournamentWinner(tournamentParticipants);
-            return tournamentWinner.ParametersList;
+            var tournamentWinnerParemeterList = new List<double>();
+            foreach(var parameter in tournamentWinner.ParametersList)
+                tournamentWinnerParemeterList.Add(parameter);
+            return tournamentWinnerParemeterList;
         }
 
         private IndividualDto GetTournamentWinner(List<IndividualDto> tournamentParticipants)
@@ -100,10 +88,9 @@ namespace Zadanie4_2
         private IndividualDto CreateLambdaIndividual(List<IndividualDto> parentPool, int tournamentSize,
             int mutationLevel)
         {
-            var mutationValue = _random.NextDouble() * (mutationLevel - -mutationLevel) + -mutationLevel;
             var tournamentWinnerParametersList = GetTournamentWinnerParameterList(parentPool, tournamentSize);
             for (var i = 0; i < tournamentWinnerParametersList.Count; i++)
-                tournamentWinnerParametersList[i] += mutationValue;
+                tournamentWinnerParametersList[i] += _random.NextDouble() * (mutationLevel - -mutationLevel) + -mutationLevel;
             var adaptationFunctionValue = GetAdaptationFunctionValue(tournamentWinnerParametersList);
             return new IndividualDto
             {

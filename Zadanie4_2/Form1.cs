@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq.Expressions;
 using System.Windows.Forms;
 
 namespace Zadanie4_2
@@ -23,6 +22,9 @@ namespace Zadanie4_2
             var muPlusLambda = new MuPlusLambda();
             var MuPlusLambdaPool = muPlusLambda.MuPlusLambdaAlgorithm(mu, parameterNumbers, lambda, tournamentSize,
                 mutationLevel, iterations);
+
+            var chart = new ChartHelper();
+            chart.GenerateChart(chart1, MuPlusLambdaPool);
         }
     }
 }
