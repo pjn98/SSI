@@ -109,7 +109,7 @@ namespace GreedyPoint_Nazwisko_Imie
         private void DodajObrazDoBazyButton_Click(object sender, EventArgs e)
         {
             bool[,] obraz = poleCalePobierz();
-            GreedyPointAlgorithm.dodajObrazDoBazy(obraz);
+            GreedyPointAlgorithm.DodajObrazDoBazy(obraz);
             
             StringBuilder wpisWBazie = new StringBuilder(poleSzerokosc * poleWysokosc);
             for (int y = 0; y < poleWysokosc; y++)
@@ -123,7 +123,7 @@ namespace GreedyPoint_Nazwisko_Imie
         {
             int obrazRozpoznanyIdx = -1;
             bool[,] obraz = poleCalePobierz();
-            obrazRozpoznanyIdx = GreedyPointAlgorithm.rozpoznajObraz(obraz);
+            obrazRozpoznanyIdx = GreedyPointAlgorithm.RozpoznajObraz(obraz);
             informacjeLabel.Text = "rozpoznany obraz nr: " + obrazRozpoznanyIdx.ToString();
 
             obrazRozpoznanyIdx = 0;
