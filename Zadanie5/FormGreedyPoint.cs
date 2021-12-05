@@ -146,6 +146,10 @@ namespace GreedyPoint_Nazwisko_Imie
                 for (int x = 0; x < poleSzerokosc; x++)
                     poleUstaw(x, y, (obrazZBazyStr[x + y * poleWysokosc] == '1') ? (true) : (false));
         }
-        
+
+        private void FormGreedyPoint_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

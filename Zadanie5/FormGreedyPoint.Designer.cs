@@ -74,6 +74,7 @@
             // BazaObrazowListView
             // 
             this.BazaObrazowListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BazaObrazowListView.HideSelection = false;
             this.BazaObrazowListView.Location = new System.Drawing.Point(3, 16);
             this.BazaObrazowListView.MultiSelect = false;
             this.BazaObrazowListView.Name = "BazaObrazowListView";
@@ -124,6 +125,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FormGreedyPoint";
             this.Text = "FormGreedyPoint";
+            this.Load += new System.EventHandler(this.FormGreedyPoint_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPoletko)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

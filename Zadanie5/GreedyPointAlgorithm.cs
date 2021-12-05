@@ -6,16 +6,31 @@ using System.Threading.Tasks;
 
 namespace GreedyPoint_Nazwisko_Imie
 {
-    static public class GreedyPointAlgorithm
+    public static class GreedyPointAlgorithm
     {
-        // static .... bazaObrazów
+        public static List<bool[,]> bazaObrazow = new List<bool[,]>();
 
-        static public void dodajObrazDoBazy(bool[,] obraz)
+        public static void DodajObrazDoBazy(bool[,] obraz)
         {
-            //....
+            bazaObrazow.Add(obraz);
         }
 
-        static public int rozpoznajObraz(bool[,] obraz)
+        public static int MiaraNiepodobienstwa(bool[,] BA, bool[,] BB)
+        {
+            var miara = 0;
+
+            for(var pay = 0; pay < BA.GetLength(0); pay++)
+            {
+                for (var pax = 0; pax < BA.GetLength(1); pax++)
+                {
+                    //double odl_min = -999;
+                }
+            }
+
+            return miara;
+        }
+
+        public static int RozpoznajObraz(bool[,] obraz)
         {
             // ... 
             // zwróc numer rozpoznanego obrazu albo -1
