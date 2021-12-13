@@ -77,7 +77,7 @@ namespace HopfieldaSiec
 
             poleCaleWyczysc();
 
-            HopfieldaSiecAlgorytm.inicjuj(poleSzerokosc, poleWysokosc);
+            HopfieldaSiecAlgorytm.Inicjuj(poleSzerokosc, poleWysokosc);
         }
         
 
@@ -134,7 +134,7 @@ namespace HopfieldaSiec
         {
             bool zmieniono = false;
             bool[,] obraz = poleCalePobierz();
-            zmieniono = HopfieldaSiecAlgorytm.rozpoznajObraz(ref obraz);
+            zmieniono = HopfieldaSiecAlgorytm.RozpoznajObraz(ref obraz);
 
             informacjeLabel.Text = (zmieniono) ? ("zmieniono (naprawiono) obraz") : ("Nie wprowadzono zmian");
             poleCaleUstaw(obraz);
@@ -144,8 +144,12 @@ namespace HopfieldaSiec
         private void ObrazNauczButton_Click(object sender, EventArgs e)
         {
             bool[,] obraz = poleCalePobierz();
-            HopfieldaSiecAlgorytm.nauczObraz(obraz);
+            HopfieldaSiecAlgorytm.NauczObraz(obraz);
         }
-        
+
+        private void Formatka_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
