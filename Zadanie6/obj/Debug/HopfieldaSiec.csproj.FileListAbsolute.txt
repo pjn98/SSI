@@ -1,0 +1,10 @@
+C:\Users\ja\source\repos\SSI\Zadanie6\bin\Debug\HopfieldaSiec_Nazwisko_Imie.exe.config
+C:\Users\ja\source\repos\SSI\Zadanie6\bin\Debug\HopfieldaSiec_Nazwisko_Imie.exe
+C:\Users\ja\source\repos\SSI\Zadanie6\bin\Debug\HopfieldaSiec_Nazwisko_Imie.pdb
+C:\Users\ja\source\repos\SSI\Zadanie6\obj\Debug\HopfieldaSiec.csprojAssemblyReference.cache
+C:\Users\ja\source\repos\SSI\Zadanie6\obj\Debug\HopfieldaSiec.Formatka.resources
+C:\Users\ja\source\repos\SSI\Zadanie6\obj\Debug\HopfieldaSiec.Properties.Resources.resources
+C:\Users\ja\source\repos\SSI\Zadanie6\obj\Debug\HopfieldaSiec.csproj.GenerateResource.cache
+C:\Users\ja\source\repos\SSI\Zadanie6\obj\Debug\HopfieldaSiec.csproj.CoreCompileInputs.cache
+C:\Users\ja\source\repos\SSI\Zadanie6\obj\Debug\HopfieldaSiec_Nazwisko_Imie.exe
+C:\Users\ja\source\repos\SSI\Zadanie6\obj\Debug\HopfieldaSiec_Nazwisko_Imie.pdb
